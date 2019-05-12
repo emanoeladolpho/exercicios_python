@@ -1,0 +1,161 @@
+class Empregado:
+    def __init__(self,nome,idade,cpd,sexo,salariobase,campus):
+        self._nome = nome
+        self._idade = idade
+        self._cpd = cpd
+        self._sexo = sexo
+        self._salariobase = salariobase
+        self._campus = campus
+        
+        
+        
+    def calcula_salario(self):
+        return self._salariobase
+        
+    
+    
+    #GETTERS AND SETTERS    
+    def getnome(self):
+        return self._nome
+        
+    def setnome(self,nome):
+        self._nome = nome
+        
+    def getidade(self):
+        return self._idade
+        
+    def setidade(self,idade):
+        self._idade = idade
+        
+    def getcpd(self):
+        return self._cpd
+        
+    def setcpd(self,cpd):
+        self.cpd = cpd
+        
+    def getsexo(self):
+        return self._sexo
+        
+    def setsexo(self,sexo):
+        self._sexo = sexo
+        
+    def getsalariobase(self):
+        return self._salariobase
+        
+    def setsalariobase(self,salariobase):
+        self._salariobase = salariobase
+        
+    def getcampus(self):
+        return self._campus
+        
+    def setcampus(self,campus):
+        self._campus = campus
+        
+    
+        
+        
+
+
+class Professor(Empregado):
+    def __init__(self,nome,idade,cpd,sexo,salariobase,campus,disciplina):
+        super().__init__(nome,idade,cpd,sexo,salariobase,campus)
+        self.__disciplina = disciplina
+        
+        
+        
+    def calcula_salario(self):
+        return self._salariobase*1.2
+    
+    #GETTERS AND SETTER
+        
+        
+    def getdisciplina(self):
+        return self.__disciplina
+        
+    def setdisciplina(self,disciplina):
+        self.__disciplina = disciplina
+
+
+
+class Zelador(Empregado):
+    def __init__(self,nome,idade,cpd,sexo,salariobase,campus,ceuma):
+        super().__init__(nome,idade,cpd,sexo,salariobase,campus)
+        self.__ceuma = ceuma
+        
+    def calcula_salario(self):
+        return self._salariobase*1.05
+        
+    
+    #GETTERS AND SETTER
+    
+    def getceuma(self):
+        return self.__ceuma
+        
+    def setceuma(self,ceuma):
+        self.__ceuma = ceuma
+
+
+
+class Reitor(Empregado):
+    def __init__(self,nome,idade,cpd,sexo,salariobase,campus,curso):
+        super().__init__(nome,idade,cpd,sexo,salariobase,campus)
+        self.__curso = curso
+        
+        
+    def calcula_salario(self):
+        return self._salariobase*1.1
+    
+    #GETTERS AND SETTER    
+    def getcurso(self):
+        return self.__curso
+        
+    def setcurso(self,curso):
+        self.__curso = curso
+
+
+class Estagiario(Empregado):
+    def __init__(self,nome,idade,cpd,sexo,salariobase,campus,setor):
+        super().__init__(nome,idade,cpd,sexo,salariobase,campus)
+        self.__setor = setor
+        
+        
+    #GETTERS AND SETTER
+    def getsetor(self):
+        return self.__setor
+        
+        
+    def setsetor(self,setor):
+        self.__setor = setor
+        
+        
+will = Professor("Will",30,123456,"M",3000,"Renascenca","Instrumentacao")
+chico = Zelador("Chico",45,654321,"M",980,"Turu","v")
+marcos = Reitor("Marcos",50,987654,"M",8000,"Anil","Ciencias da Computacao")
+valentina = Estagiario("Valentina",21,369258,"F",700,"Renascenca","Informatica")
+
+
+print(will.calcula_salario())
+print(chico.calcula_salario())
+print(marcos.calcula_salario())
+print(valentina.calcula_salario())
+
+
+
+valentina.setsetor("Recursos Humanos")
+print(valentina.getsetor())
+marcos.setcurso("Analise e Desenvolvimento de Sistema")
+print(marcos.getcurso())
+chico.setceuma("III")
+print(chico.getceuma())
+will.setsalariobase(3300)
+print(will.getsalariobase())
+print(will.calcula_salario())
+
+marcos.setsalariobase(8500)
+print(marcos.getsalariobase())
+print(marcos.calcula_salario())
+chico.setsalariobase(1100)
+print(chico.getsalariobase())
+print(chico.calcula_salario())
+valentina.setsalariobase(900)
+print(valentina.calcula_salario())
