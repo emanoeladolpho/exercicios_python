@@ -1,0 +1,58 @@
+#HEANCA MULTIPLA
+
+
+class pai:
+    
+    def __init__(self,nome,idade,atividade):
+        self.nome = nome
+        self.idade = idade 
+        self.atividade = atividade
+        self.tipo = "Pai"
+        
+        
+        
+    def andar(self):
+        print("Pai andando")
+        
+        
+
+class mae:
+    
+    def __init__(self,nome,idade,atividade):
+        self.nome = nome
+        self.idade = idade
+        self.atividade = atividade
+        self.tipo = "Mae"
+    
+    def andar(self):
+        print("Mae andando")
+        
+        
+        
+class filha(pai,mae):
+    
+    def __init__(self,nome,idade,atividade):
+        self.nome = nome
+        self.idade = idade
+        self.atividade = atividade
+        self.tipo = "Filha"
+        
+        
+    def andar(self):
+        pai.andar(self)
+        
+        
+        
+        
+jose = pai("Jose",40,"Advogado")
+maria = mae("Maria",42,"Professora")
+        
+ana = filha("Ana",19,"Estudante")
+ana.andar()
+print(ana.tipo)
+print(ana.atividade)
+
+print(jose.tipo)
+print(maria.tipo)
+jose.andar()
+maria.andar()
