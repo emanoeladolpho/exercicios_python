@@ -1,0 +1,96 @@
+# EXERCÍCIO: PROTÓTIPO DE UM CARRO
+
+
+class Carro:
+  def __init__(self,cor,marca,modelo,velocidade,ligado):
+    self.__cor = cor
+    self.__marca = marca
+    self.__modelo = modelo
+    self.__velocidade = velocidade
+    self.__ligado = ligado
+
+    # GETTERS AND SETTERS
+  def getCor(self):
+    return self.__cor
+
+  def setCor(self,cor):
+    self.__cor = cor
+
+  def getMarca(self):
+    return self.__marca
+
+  def setMarca(self,marca):
+    self.__marca = marca
+
+  def getModelo(self):
+    return self.__modelo
+
+  def setModelo(self,modelo):
+    self.__modelo = modelo
+
+  def getVelocidade(self):
+    return self.__velocidade
+
+  def setVelocidade(self,velocidade):
+    self.__velocidade = velocidade
+
+  def isLigado(self):
+    return self.__ligado
+
+  def setLigado(self,ligado):
+    self.__ligado = ligado
+
+
+
+# METHODS
+
+  def Ligar(self):
+    if(self.isLigado() == False):
+      self.setLigado(True)
+
+
+  def Andar(self):
+    if(self.isLigado() == True):
+      self.setVelocidade(50)
+      return "Andando"
+    else:
+      return "Nao e possivel andar no momento!"
+
+
+  def Acelerar(self):
+    if(self.isLigado() == True):
+      self.setVelocidade(self.getVelocidade() + 20)
+      return self.getVelocidade()
+
+  def Freiar(self):
+     if(self.isLigado() == True):
+       self.setVelocidade(self.getVelocidade() - 20)
+       return self.getVelocidade()
+
+
+  def Parar(self):
+    if(self.isLigado() == True):
+      self.setLigado(False)
+      return "Parando"
+    else:
+      return "Nao e possivel parar."
+
+
+
+carro1 = Carro("Vermelho","Tesla","X",0,False)
+
+
+
+print(carro1.Andar())
+carro1.Ligar()
+print(carro1.Andar())
+print(carro1.getVelocidade())
+print(carro1.Acelerar())
+print(carro1.Acelerar())
+print(carro1.Freiar())
+print(carro1.Parar())
+print(carro1.Parar())
+print(carro1.getCor())
+print(carro1.getVelocidade())
+print(carro1.getModelo())
+print(carro1.getMarca())
