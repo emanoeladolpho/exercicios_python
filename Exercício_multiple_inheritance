@@ -1,0 +1,67 @@
+class Motor:
+  def __init__(self,numCilindro,potencia):
+    self.numCilindro = numCilindro
+    self.potencia = potencia
+
+
+
+class Veiculo:
+  def __init__(self,peso,velocMax,preco):
+    self.peso = peso
+    self.velocMax = velocMax
+    self.preco = preco
+
+
+
+class carroPasseio(Motor,Veiculo):
+  def __init__(self,numCilindro,Potencia,peso,velocMax,preco,cor,modelo):
+    Motor.__init__(self,numCilindro,Potencia)
+    Veiculo.__init__(self,peso,velocMax,preco)
+    self.cor = cor
+    self.modelo = modelo
+
+
+
+  def andar(self):
+    return "Carro de passeio andando"
+
+
+class Caminhao(Motor,Veiculo):
+  def __init__(self,numCilindro,potencia,peso,velocMax,preco,cargaMax,alturaMax,comprimento):
+    Motor.__init__(self,numCilindro,potencia)
+    Veiculo.__init__(self,peso,velocMax,preco)
+    self.cargaMax = cargaMax
+    self.alturaMax = alturaMax
+    self.comprimento = comprimento
+
+
+
+
+  def andar(self):
+    return "Caminhao andando"
+
+
+  
+
+carrop = carroPasseio(123,60,2000,200,55000.35,"Preto","Corsa")
+caminhao = Caminhao(456,70,5000,180,120000,800,3,25)
+print(carrop.numCilindro)
+print(carrop.potencia)
+print(carrop.peso)
+print(carrop.velocMax)
+print(carrop.preco)
+print(carrop.cor)
+print(carrop.modelo)
+print(carrop.andar())
+
+print("---------------")
+
+print(caminhao.numCilindro)
+print(caminhao.potencia)
+print(caminhao.peso)
+print(caminhao.velocMax)
+print(caminhao.preco)
+print(caminhao.cargaMax)
+print(caminhao.alturaMax)
+print(caminhao.comprimento)
+print(caminhao.andar())
